@@ -71,3 +71,22 @@ magic = Spell.new
 user.public_send(:name)
 # Unlike send, this won't allow calling private methods, which protects you from doing weird or dangerous things accidentally.
 
+
+# removes the items based on the block condition
+reject! { |item| block } → ary or nil
+
+
+# It transforms each element in an array (or enumerable) based on the logic you provide in a block, and returns a new array with the results.
+array.collect { |element| ... }
+array.map { |element| ... }
+
+# delete_if modifies the original array or hash by deleting elements for which the block returns true.
+nums = [1, 2, 3, 4, 2, 5]
+nums.delete_if { |n| n == 2 }
+puts nums
+# => [1, 3, 4, 5]
+
+
+# If you're not sure whether you want to change the original array, stick with reject or use dup to create a copy:
+new_nums = nums.dup.delete_if { |n| n == 2 }
+
