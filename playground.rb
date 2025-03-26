@@ -90,3 +90,39 @@ puts nums
 # If you're not sure whether you want to change the original array, stick with reject or use dup to create a copy:
 new_nums = nums.dup.delete_if { |n| n == 2 }
 
+
+# From this point on, you’ll be working with larger and larger chunks
+# of Ruby code. It’s likely, though, that you’ll still want to try out meth-
+# ods in irb. But method definitions are awkward to type. Once you hit
+# Enter , you can’t correct an error without retyping the whole method.
+# One alternative is to edit the method in a file and then paste it into irb
+# (as described in Section 2.6, Working with Prompts, on page 25).
+# An alternative I often prefer is to make the whole Ruby script loadable.
+# That means the script executes normally when run from the command
+# line but can also be loaded into irb so that all its methods are available.
+
+
+prompt> irb
+irb(main):001:0> load 'exercise-differences.rb'
+=> true
+irb(main):002:0> boring?('/temp/foo')
+=> true
+
+
+
+
+# Another useful iterator is any?. It returns true if any of the array
+# elements make the attached block return true. To ask whether any
+# deposit is big enough to report to the authorities, you could type
+# this:
+irb(main):004:0> deposits = [1, 0, 10000]
+irb(main):005:0> deposits.any? do | deposit |
+irb(main):006:1* deposit > 9999
+irb(main):007:1> end
+=> true
+# You can read that as “you are given a list of three deposits. Is
+# anydeposit greater than 9999?”
+
+
+#  p 60.
+
